@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arley Moreira - Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+    <header class="bg-gray-900 bg-opacity-80 p-6 shadow-lg fixed w-full z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-neon-blue hover:text-neon-purple transition duration-300">
+                &lt;DEV_A.M&gt;
+            </a>
+            <ul class="flex space-x-8">
+                <li><a href="#hero" class="text-lg text-gray-300 hover:text-neon-blue transition duration-300">Home</a></li>
+                <li><a href="#services" class="text-lg text-gray-300 hover:text-neon-blue transition duration-300">Services</a></li>
+                <li><a href="#contact" class="text-lg text-gray-300 hover:text-neon-blue transition duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="section-grid min-h-screen flex flex-col items-center justify-center text-center p-8 pt-24 relative overflow-hidden">
+        <canvas id="galaxyCanvas" class="absolute inset-0 z-0"></canvas>
+
+        <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(circle, #00ff00 1px, transparent 1px), radial-gradient(circle, #00ffff 1px, transparent 1px); background-size: 20px 20px; background-position: 0 0, 10px 10px;"></div>
+
+        <div class="z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl mb-4 leading-tight">
+                <span class="block">&lt;Hello, World!&gt;</span>
+                <span class="block text-neon-blue">I am [Arley Moreira]</span>
+            </h1>
+            <p id="typing-text" class="text-2xl md:text-3xl text-neon-purple mb-8 h-10 md:h-12"></p>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Transforming complex ideas into robust and innovative digital solutions.
+                From frontend to backend, building the future, line by line of code.
+            </p>
+            <!--<a href="#contact" class="btn-neon px-8 py-4 rounded-lg text-xl uppercase tracking-wider"> <a href="#contact" class="btn-neon px-8 py-4 rounded-lg text-xl uppercase tracking-wider"></a>
+                Connect &gt;-->
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="section-grid py-20 px-8 bg-gray-900">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl md:text-5xl text-center mb-16">
+                &lt;Digital_Solutions&gt;
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-blue">Frontend &lt;UI/UX&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                       Development of pixel-perfect and responsive user interfaces.
+                        Intuitive and engaging experiences for your customers.
+                        (React, Vue.js, HTML5, CSS3, JavaScript)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>Responsive Design</li>
+                        <li>User Experience (UX)</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-purple">Backend &lt;API_Logic&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                        Construction of robust and scalable APIs to support your applications.
+                        Complex business logic and system integration.
+                        (Node.js, Python, Java - Spring Boot, RESTful APIs)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>Development of RESTful/GraphQL APIs</li>
+                        <li>Authentication and Authorization</li>
+                        <li>Microserviços</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-blue">Data &lt;Storage_Solutions&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                        Database modeling and management to ensure the integrity
+and efficiency of your data.
+(MongoDB, PostgreSQL, MySQL)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>Data Modeling</li>
+                        <li>Query Optimization</li>
+                        <li>Data Security</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-purple">Cloud &lt;Deployment_Ops&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                        Deployment and maintenance of applications in cloud environments.
+                        Ensuring scalability and high availability.
+                        (AWS, Google Cloud, Docker, CI/CD)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>Infrastructure as Code</li>
+                        <li>Containers (Docker)</li>
+                        <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-blue">Consulting &lt;Code_Review&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                        Technical guidance and code review to optimize your projects
+                        and ensure best development practices.
+                        (Best Practices, Software Architecture)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>Mentoring in Development</li>
+                        <li>Code Analysis</li>
+                        <li>Project Planning</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700 hover:border-neon-blue transition duration-300 transform hover:scale-105">
+                    <h3 class="text-3xl mb-4 text-neon-purple">Support &lt;Maintenance_Ops&gt;</h3>
+                    <p class="text-gray-400 mb-4">
+                        Continuous maintenance and technical support to ensure the proper functioning and security of your applications.
+                        (Monitoring, Bug Fixing, Updates)
+                    </p>
+                    <ul class="list-disc list-inside text-gray-500 text-sm">
+                        <li>System Monitoring</li>
+                        <li>Troubleshooting</li>
+                        <li>Security Updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-grid py-20 px-8 bg-gray-900">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl text-center mb-16">
+                &lt;Talk to me&gt;
+            </h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-green-700">
+                <p class="text-lg text-gray-400 text-center mb-8">
+                    Ready to turn your vision into a digital reality?
+Send me a message and let’s build something amazing together.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 text-lg mb-2">Name:</label>
+                        <input type="text" id="name" name="name" class="input-retro w-full p-3 rounded-md" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 text-lg mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="input-retro w-full p-3 rounded-md" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 text-lg mb-2">Messenger:</label>
+                        <textarea id="message" name="message" rows="6" class="input-retro w-full p-3 rounded-md" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-neon w-full py-3 rounded-md text-xl uppercase tracking-wider">
+                        Send Message &gt;
+                    </button>
+                    <div id="form-status" class="mt-4 text-center text-lg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 bg-opacity-80 p-6 text-center text-gray-500 text-sm">
+        <p>&copy; <span id="current-year"></span>&reg;Arley Moreira-All rights reserved. | Built with &lt;code&gt; and &lt;passion&gt;</p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="https://github.com/arleymoreira" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-blue transition duration-300">
+                GitHub
+            </a>
+            <a href="https://linkedin.com/in/arleymoreira" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-blue transition duration-300">
+                LinkedIn
+            </a>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
