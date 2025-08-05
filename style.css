@@ -1,0 +1,50 @@
+
+/* Estilos personalizados para o tema retro-futurista */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117; /* Fundo escuro, quase preto */
+    color: #e2e8f0; /* Texto claro */
+}
+h1, h2, h3 {
+    font-family: 'VT323', monospace; /* Fonte para títulos com ar de terminal */
+    color: #00ff00; /* Verde neon */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Efeito de brilho neon */
+}
+.text-neon-blue {
+    color: #00ffff; /* Ciano neon */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+.text-neon-purple {
+    color: #ff00ff; /* Magenta neon */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
+.btn-neon {
+    background-color: #00ff00;
+    color: #0d1117;
+    font-family: 'VT323', monospace;
+    text-shadow: none; /* Remove brilho do texto do botão para melhor legibilidade */
+    box-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00;
+    transition: all 0.3s ease-in-out;
+}
+.btn-neon:hover {
+    background-color: #00cc00;
+    box-shadow: 0 0 10px #00cc00, 0 0 20px #00cc00;
+}
+.input-retro {
+    background-color: #1a202c; /* Fundo mais escuro para inputs */
+    border: 1px solid #00ff00; /* Borda verde neon */
+    color: #e2e8f0;
+    font-family: 'VT323', monospace;
+    box-shadow: 0 0 3px #00ff00;
+}
+.input-retro:focus {
+    outline: none;
+    border-color: #00ffff; /* Borda ciano neon ao focar */
+    box-shadow: 0 0 5px #00ffff;
+}
+.section-grid {
+    background-image: linear-gradient(to right, rgba(0,255,0,0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0,255,0,0.1) 1px, transparent 1px);
+    background-size: 50px 50px; /* Tamanho da grade */
+    background-position: -1px -1px; /* Ajuste para bordas */
+}
