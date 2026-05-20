@@ -135,31 +135,48 @@ function animateGalaxy() {
 
     requestAnimationFrame(animateGalaxy); // Loop contínuo
 }
-// --- Formulário de Contato (simulado) ---
+// --- Formulário de Contato ---
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', function(event) {
+contactForm.addEventListener('submit', async function(event) {
     event.preventDefault(); // Impede o envio padrão do formulário
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+        formStatus.textContent = 'Por favor, preencha todos os campos.';
+        formStatus.className = 'mt-4 text-center text-lg text-red-400';
+        return;
+    }
 
     formStatus.textContent = 'Enviando...';
     formStatus.className = 'mt-4 text-center text-lg text-yellow-400';
 
-    // Simula um envio assíncrono
-    setTimeout(() => {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+    try {
+        const response = await fetch('/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, message })
+        });
 
-        if (name && email && message) {
-            formStatus.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
-            formStatus.className = 'mt-4 text-center text-lg text-green-400';
-            contactForm.reset(); // Limpa o formulário
-        } else {
-            formStatus.textContent = 'Por favor, preencha todos os campos.';
-            formStatus.className = 'mt-4 text-center text-lg text-red-400';
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || 'Erro ao enviar mensagem.');
         }
-    }, 2000); // Simula um atraso de 2 segundos
+
+        formStatus.textContent = result.message;
+        formStatus.className = 'mt-4 text-center text-lg text-green-400';
+        contactForm.reset();
+    } catch (error) {
+        formStatus.textContent = error.message || 'Erro ao enviar mensagem.';
+        formStatus.className = 'mt-4 text-center text-lg text-red-400';
+    }
 });
 
 // --- Atualiza o ano no footer ---
