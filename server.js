@@ -21,6 +21,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+transporter.verify((error, success) => {
+  if (error) {
+    console.error('Erro de configuração do SMTP:', error.message);
+  } else {
+    console.log('Servidor SMTP pronto para enviar emails.');
+  }
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
