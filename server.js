@@ -51,6 +51,14 @@ app.post('/contact', async (req, res) => {
     html: `<p><strong>Nome:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Mensagem:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
   };
 
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    console.error('SMTP_USER ou SMTP_PASS não configurado. Impossível enviar email.');
+    return res.status(500).json({
+      success: false,
+      error: 'Servidor não configurado para envio de email. Verifique as variáveis de ambiente.'
+    });
+  }
+
   try {
     await transporter.sendMail(mailOptions);
     console.log('Email enviado para', DEST_EMAIL);
