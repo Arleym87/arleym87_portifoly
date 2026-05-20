@@ -148,24 +148,20 @@ and efficiency of your data.
                     Ready to turn your vision into a digital reality?
 Send me a message and let’s build something amazing together.
                 </p>
-                <form id="contact-form" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-gray-300 text-lg mb-2">Name:</label>
-                        <input type="text" id="name" name="name" class="input-retro w-full p-3 rounded-md" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-300 text-lg mb-2">Email:</label>
-                        <input type="email" id="email" name="email" class="input-retro w-full p-3 rounded-md" placeholder="your.email@example.com" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-300 text-lg mb-2">Messenger:</label>
-                        <textarea id="message" name="message" rows="6" class="input-retro w-full p-3 rounded-md" placeholder="Your message here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-neon w-full py-3 rounded-md text-xl uppercase tracking-wider">
-                        Send Message &gt;
-                    </button>
-                    <div id="form-status" class="mt-4 text-center text-lg"></div>
-                </form>
+                <form
+  action="https://formspree.io/f/mgoqapbz"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form>
             </div>
         </div>
     </section>
